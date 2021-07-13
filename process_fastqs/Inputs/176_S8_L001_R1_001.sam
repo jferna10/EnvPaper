@@ -1,0 +1,3 @@
+@HD	VN:1.0	SO:unsorted
+@SQ	SN:pNL4_3_rev_cs	LN:15184
+@PG	ID:bowtie2	PN:bowtie2	VN:2.2.1	CL:"/public/groups/wet/Sequences/programs/bowtie2/bowtie2/bowtie2-align-s --wrapper basic-0 -x /public/home/jferna10/hive/jferna10/EnvLibraries/Mapping/rev_cs_bowtie2_index --fast-local -S 176_S8_L001_R1_001.sam --rdg 100,3 --rfg 100,3 -1 176_S8_L001_R1_001.fastq -2 176_S8_L001_R2_001.fastq"
