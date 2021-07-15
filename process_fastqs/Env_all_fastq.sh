@@ -1,17 +1,17 @@
 #!/bin/bash
 
-ls *.fastq >list.txt #get a list of all fastq's in directory
+FQ_DIR="../fastq/"
+ls ${FQ_DIR}*.fastq.gz | sed "s/\.\.\/fastq\///g" | sed "s/\.fastq\.gz//g">list.txt #get a list of all fastq's in directory
+mkdir sam
+mkdir bam
 
 while read -r ONE; do
     read -r TWO
-    FNAME=$(echo "$ONE" | cut -d. -f1)
-    
-    bowtie2 -x ~/hive/jferna10/EnvLibraries/Mapping/rev_cs_bowtie2_index -1 $ONE -2 $TWO --fast-local -S $FNAME.sam --rdg 100,3 --rfg 100,3
-    java countDMScodons $FNAME.sam 8474 8560
-    echo "Processed $FNAME"
 
-    #  	bowtie2 -x ~/hive/jferna10/EnvLibraries/Mapping/rev_cs_bowtie2_index -1 LLP2_256_a_S4_L001_R1_001.fastq.gz -2 LLP2_256_a_S4_L001_R2_001.fastq.gz --fast-local -S tmp.sam --rdg 100,3 --rfg 100,3
+    bowtie2 -x ../seq/pNL4_3_rev_cs -1 ${FQ_DIR}/${ONE}.fastq.gz -2 ${FQ_DIR}/${TWO}.fastq.gz --fast-local -S ${ONE}.sam --rdg 100,3 --rfg 100,3
+    java countDMScodons $ONE.sam 8474 8560
+    samtools view -S -b $ONE.sam > bam/$ONE.bam
+    rm $ONE.sam
+    echo "Processed $ONE"
+
 done < list.txt
-
-
-

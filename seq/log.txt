@@ -1,0 +1,1 @@
+bowtie2-build -f pNL4_3_rev_cs.fa pNL4_3_rev_cs
