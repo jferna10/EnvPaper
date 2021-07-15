@@ -6,10 +6,10 @@ This github repo contains code related to the submitted paper "Functional and St
 
 These scipts use:
 
-bowtie2
-Rstudio
-java
-standard bash commands 
+bowtie2 <br>
+Rstudio<br>
+java<br>
+standard bash commands <br>
 
 Here is the overview of what you will find in this repository:
 
