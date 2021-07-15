@@ -6,8 +6,8 @@ This github repo contains code related to the submitted paper "Functional and St
 
 These scipts use:
 
-bowtie2 <br>
-Rstudio<br>
+[bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml) <br>
+[Rstudio](https://www.rstudio.com/)<br>
 java<br>
 standard bash commands <br>
 
@@ -17,12 +17,11 @@ Here is the overview of what you will find in this repository:
 ## Stats
 Basic QC metrics for MiSeq run for the Env Deep Mutational Scanning Data. These are run-wide stats like demultipliexing stats.
 
-
 ## Reports
 Basic QC metrics for each of the fastqs for the Env Deep Mutational Scanning Data.
 
 ## seq
-Reference genome sequence and associated bowtie2 index for mapping.
+Reference genome sequence and associated bowtie2 index for mapping. Note this virus is the HIV-1 NL4-3 sequence with rev-in-nef.   
 
 ## process_fastqs
 Code used to generate codon and amino acid counts.
@@ -34,6 +33,8 @@ The bulk of the work is done by countDMS, a simple java program which attempts t
 The output of countDMS are codon and amino acid count files in tab delimited format.
 
 Note that the BAMs provided are slightly different than the tab files as the BAMs are the result of a more recent remapping than the figure in the paper. However the differences are slight (slightly better mapping with the more recent mapping, maybe due to an upgraded version of bowtie2).
+
+If you wish to perform a similar analysis and are worried about alignment artifacts or wish to avoid using the custom countDMS program I suggest using [seqkit](https://bioinf.shenwei.me/seqkit/usage/) and the associated amplicon feature to extract the DMS region and parse the resulting sequence.
 
 
 ## aa_tab
