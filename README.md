@@ -4,11 +4,12 @@ Code Related to Functional and Structural Segregation of Overlapping Helices in 
 
 This github repo contains code related to the submitted paper "Functional and Structural Segregation of Overlapping Helices in HIV-1". The files deposited here are intended to make the analyses - as they were done at the time of writing the paper - transparent. However due to things like files being renamed (e.g. GEO fastq names from GSE179046 are slightly different than original names), the compute environment, etc you probably can't just run this code and get the figures.  But it should be pretty close, and you shouldn't hesitate to contact us if you notice any issues.
 
-These scipts require:
+These scipts use:
 
 bowtie2
 Rstudio
-
+java
+standard bash commands 
 
 Here is the overview of what you will find in this repository:
 
